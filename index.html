@@ -3,73 +3,135 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>NSR News & Research - ID Verification</title>
 
 <style>
-body{
-    margin:0;
-    font-family:Arial,sans-serif;
-    background:#eef2f7;
-    color:#17213b;
+* {
+    box-sizing: border-box;
 }
-.header{
-    background:#071d45;
-    padding:22px;
-    text-align:center;
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #eef2f7;
+    color: #17213b;
 }
-.header img{
-    width:220px;
-    max-width:80%;
+
+.header {
+    background: #071d45;
+    padding: 18px;
+    text-align: center;
 }
-.container{
-    max-width:600px;
-    margin:35px auto;
-    padding:20px;
+
+.header img {
+    width: 220px;
+    max-width: 80%;
+    background: white;
+    padding: 8px;
+    border-radius: 10px;
 }
-.card{
-    background:white;
-    border-radius:16px;
-    padding:30px;
-    box-shadow:0 5px 25px rgba(0,0,0,.15);
+
+.container {
+    max-width: 700px;
+    margin: 30px auto;
+    padding: 20px;
 }
-.title{
-    text-align:center;
-    font-size:25px;
-    font-weight:bold;
-    margin-bottom:25px;
+
+.card {
+    background: white;
+    border-radius: 18px;
+    padding: 30px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+    text-align: center;
 }
-.verified{
-    background:#e8f8ee;
-    color:#087b35;
-    border:2px solid #18a957;
-    padding:14px;
-    border-radius:10px;
-    text-align:center;
-    font-size:22px;
-    font-weight:bold;
-    margin-bottom:20px;
+
+.title {
+    font-size: 30px;
+    font-weight: bold;
+    color: #071d45;
+    margin-bottom: 8px;
 }
-.error{
-    background:#fff0f0;
-    color:#c00000;
-    border:2px solid #d00000;
-    padding:15px;
-    border-radius:10px;
-    text-align:center;
-    font-weight:bold;
+
+.subtitle {
+    color: #555;
+    margin-bottom: 25px;
 }
-.info{
-    line-height:1.8;
-    font-size:17px;
+
+.verified {
+    background: #e8f8ee;
+    border: 2px solid #1b9e4b;
+    color: #08752f;
+    padding: 15px;
+    border-radius: 12px;
+    font-size: 25px;
+    font-weight: bold;
+    margin-bottom: 25px;
 }
-.label{
-    font-weight:bold;
+
+.photo {
+    width: 170px;
+    height: 170px;
+    object-fit: cover;
+    border-radius: 15px;
+    border: 5px solid #071d45;
+    margin-bottom: 15px;
 }
-.footer{
-    margin-top:25px;
-    text-align:center;
-    color:#666;
-    font-size:14px;
+
+.name {
+    font-size: 27px;
+    font-weight: bold;
+    color: #071d45;
+}
+
+.designation {
+    display: inline-block;
+    background: #c90000;
+    color: white;
+    padding: 8px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    margin: 10px 0 20px;
+}
+
+.details {
+    text-align: left;
+    max-width: 500px;
+    margin: auto;
+}
+
+.details p {
+    border-bottom: 1px solid #ddd;
+    padding: 10px 0;
+    margin: 0;
+}
+
+.label {
+    font-weight: bold;
+    color: #555;
+}
+
+.error {
+    background: #fff0f0;
+    border: 2px solid #d00000;
+    color: #b00000;
+    padding: 20px;
+    border-radius: 12px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.footer {
+    text-align: center;
+    color: #666;
+    margin-top: 25px;
+    font-size: 14px;
+}
+
+.contact {
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid #ddd;
 }
 </style>
 </head>
@@ -81,135 +143,157 @@ body{
 </div>
 
 <div class="container">
+
 <div class="card">
 
 <div class="title">
-MEDIA IDENTIFICATION VERIFICATION
+    NSR NEWS & RESEARCH
+</div>
+
+<div class="subtitle">
+    MEDIA IDENTIFICATION VERIFICATION
 </div>
 
 <div id="result"></div>
 
-<div class="footer">
-NSR NEWS & RESEARCH<br>
-9059491638 | 9908759929<br>
-nsrnewstelangana@gmail.com
+<div class="contact">
+    <b>NSR NEWS & RESEARCH</b><br><br>
+    📞 9059491638 &nbsp; | &nbsp; 9908759929<br>
+    ✉️ nsrnewstelangana@gmail.com
 </div>
 
 </div>
+
+<div class="footer">
+    © NSR News & Research
+</div>
+
 </div>
 
 <script>
 
 const journalists = {
 
-"NSR 0220001": {
-name:"Racharla Gopi",
-designation:"Chief Editor",
-organisation:"NSR NEWS & RESEARCH",
-area:"Warangal, Telangana",
-phone:"9059491638",
-valid:"31-12-2026",
-status:"ACTIVE"
-},
+    "NSR 0220001": {
+        name: "RACHARLA GOPI",
+        designation: "CHIEF EDITOR",
+        organisation: "NSR NEWS",
+        area: "Warangal, Telangana",
+        phone: "9059491638",
+        valid: "31-12-2026",
+        status: "ACTIVE"
+    },
 
-"NSR 0220002": {
-name:"Reporter Name",
-designation:"Reporter",
-organisation:"NSR NEWS & RESEARCH",
-area:"Warangal, Telangana",
-phone:"9908759929",
-valid:"31-12-2026",
-status:"ACTIVE"
-},
+    "NSR 0220003": {
+        name: "GILIGITHA. RAJINI",
+        designation: "SUB-EDITOR",
+        organisation: "NSR NEWS",
+        area: "Warangal, Telangana",
+        phone: "9908759929",
+        valid: "31-12-2026",
+        status: "ACTIVE"
+    },
 
-"NSR 0220003": {
-name:"GILIGITHA RAJINI",
-designation:"SUB-EDITOR",
-organisation:"NSR NEWS",
-area:"Warangal, Telangana",
-phone:"9908759929",
-valid:"31-12-2026",
-status:"ACTIVE"
-}
+    "NSR 0220009": {
+        name: "AVULA PURNA PRASAD",
+        designation: "CAMERAMAN",
+        organisation: "NSR NEWS",
+        area: "Warangal, Telangana",
+        phone: "9908759929",
+        valid: "31-12-2026",
+        status: "ACTIVE"
+    }
 
 };
 
 const params = new URLSearchParams(window.location.search);
-const id = params.get("id");
+const id = (params.get("id") || "").trim().toUpperCase();
+
 const result = document.getElementById("result");
 
-if(!id){
+if (!id) {
 
-result.innerHTML =
-`<div class="error">
-ID NUMBER NOT PROVIDED
-<br><br>
-Please scan a valid NSR Journalist ID QR Code.
-</div>`;
-
-}
-
-else if(!journalists[id]){
-
-result.innerHTML =
-`<div class="error">
-❌ ID NOT VERIFIED
-<br><br>
-Employee ID: <b>${id}</b>
-<br><br>
-This ID was not found in the NSR verification system.
-</div>`;
+    result.innerHTML = `
+        <div class="error">
+            ⚠️ ID NOT PROVIDED
+            <br><br>
+            Please scan a valid NSR Journalist ID QR Code.
+        </div>
+    `;
 
 }
+else if (!journalists[id]) {
 
-else{
-
-const p = journalists[id];
-
-if(p.status === "ACTIVE"){
-
-result.innerHTML =
-`
-<div class="verified">
-✓ VERIFIED JOURNALIST
-</div>
-
-<div class="info">
-
-<b>NAME:</b> ${p.name}<br>
-
-<b>DESIGNATION:</b> ${p.designation}<br>
-
-<b>ORGANISATION:</b> ${p.organisation}<br>
-
-<b>EMPLOYEE ID:</b> ${id}<br>
-
-<b>AREA:</b> ${p.area}<br>
-
-<b>CONTACT:</b> ${p.phone}<br>
-
-<b>VALID UP TO:</b> ${p.valid}<br>
-
-<b>STATUS:</b> ${p.status}
-
-</div>
-`;
+    result.innerHTML = `
+        <div class="error">
+            ❌ ID NOT VERIFIED
+            <br><br>
+            Employee ID: <b>${id}</b>
+            <br><br>
+            This ID was not found in the NSR verification system.
+        </div>
+    `;
 
 }
+else {
 
-else{
+    const p = journalists[id];
 
-result.innerHTML =
-`
-<div class="error">
-❌ ID NOT ACTIVE
-<br><br>
-Employee ID: <b>${id}</b>
-</div>
-`;
+    result.innerHTML = `
 
-}
+        <div class="verified">
+            ✅ VERIFIED JOURNALIST
+        </div>
 
+        <div class="name">
+            ${p.name}
+        </div>
+
+        <div class="designation">
+            ${p.designation}
+        </div>
+
+        <div class="details">
+
+            <p>
+                <span class="label">Employee ID:</span>
+                ${id}
+            </p>
+
+            <p>
+                <span class="label">Organisation:</span>
+                ${p.organisation}
+            </p>
+
+            <p>
+                <span class="label">Designation:</span>
+                ${p.designation}
+            </p>
+
+            <p>
+                <span class="label">Area:</span>
+                ${p.area}
+            </p>
+
+            <p>
+                <span class="label">Contact:</span>
+                ${p.phone}
+            </p>
+
+            <p>
+                <span class="label">Valid Until:</span>
+                ${p.valid}
+            </p>
+
+            <p>
+                <span class="label">Status:</span>
+                <b style="color:#07852f;">
+                    ${p.status}
+                </b>
+            </p>
+
+        </div>
+    `;
 }
 
 </script>
