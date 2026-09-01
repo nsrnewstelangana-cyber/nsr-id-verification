@@ -1,1 +1,21 @@
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>NSR News & Research - ID Verification</title>
+<style>
+*{box-sizing:border-box}body{margin:0;font-family:Arial,sans-serif;background:#eef2f7;color:#17213b}.header{background:#071d45;padding:18px;text-align:center}.header img{width:210px;max-width:80%;background:#fff;border-radius:6px}.container{max-width:700px;margin:35px auto;padding:20px}.card{background:#fff;border-radius:16px;padding:28px;box-shadow:0 5px 25px rgba(0,0,0,.12)}.title{text-align:center;color:#071d45}.verify{background:#07883f;color:#fff;padding:14px;border-radius:8px;text-align:center;font-size:22px;font-weight:bold;margin-bottom:20px}.row{border-bottom:1px solid #eee;padding:12px 0}.label{color:#777;font-size:13px}.value{font-size:17px;font-weight:bold;margin-top:3px}.contact{margin-top:25px;padding:18px;background:#f5f7fa;border-radius:10px;text-align:center}.footer{text-align:center;color:#777;font-size:13px;margin-top:20px}.error{text-align:center;color:#b00020;font-size:22px;font-weight:bold}
+</style></head><body>
+<div class="header"><img src="nsr-logo.png" alt="NSR News & Research"></div>
+<div class="container"><div class="card"><h1 class="title">NSR NEWS & RESEARCH</h1><p style="text-align:center">MEDIA IDENTIFICATION VERIFICATION</p><div id="result"></div>
+<div class="contact"><b>NSR NEWS & RESEARCH</b><br><br>📞 9059491638 &nbsp; | &nbsp; 9908759929<br>✉️ nsrnewstelangana@gmail.com<br><br>Instagram: @nsrnewstv<br>YouTube: @nsrnewstelangana</div><div class="footer">Official Journalist ID Verification Portal</div></div></div>
+<script>
+const journalists={
+"NSR 0220001":{name:"Racharla Gopi",designation:"Chief Editor",organisation:"NSR NEWS & RESEARCH",area:"Warangal, Telangana",phone:"9059491638",valid:"31-12-2026",status:"ACTIVE"},
+"NSR 0220002":{name:"Reporter Name",designation:"Reporter",organisation:"NSR NEWS & RESEARCH",area:"Warangal, Telangana",phone:"9908759929",valid:"31-12-2026",status:"ACTIVE"}
+};
+const id=new URLSearchParams(location.search).get("id"),result=document.getElementById("result");
+if(!id)result.innerHTML='<div class="error">ID NUMBER NOT PROVIDED</div><p style="text-align:center">Please scan a valid NSR Journalist ID QR Code.</p>';
+else if(!journalists[id])result.innerHTML='<div class="error">❌ ID NOT VERIFIED</div><p style="text-align:center">Employee ID: <b>'+id+'</b><br>This ID was not found in the NSR verification system.</p>';
+else{const p=journalists[id];const badge=p.status==="ACTIVE"?'<div class="verify">✅ VERIFIED JOURNALIST</div>':'<div class="error">❌ ID NOT ACTIVE</div>';result.innerHTML=badge+[['NAME',p.name],['DESIGNATION',p.designation],['ORGANISATION',p.organisation],['EMPLOYEE ID',id],['AREA',p.area],['PHONE',p.phone],['VALID UNTIL',p.valid],['STATUS',p.status]].map(x=>'<div class="row"><div class="label">'+x[0]+'</div><div class="value">'+x[1]+'</div></div>').join('')}
+</script></body></html>
