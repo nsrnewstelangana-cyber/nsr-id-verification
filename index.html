@@ -173,7 +173,6 @@ body {
 <script>
 
 const journalists = {
-
     "NSR 0220001": {
         name: "RACHARLA GOPI",
         designation: "CHIEF EDITOR",
@@ -184,45 +183,40 @@ const journalists = {
         status: "ACTIVE"
     },
 
-    "NSR 0220003": {
-        name: "GILIGITHA. RAJINI",
-        designation: "SUB-EDITOR",
+    "NSR 0220002": {
+        name: "RACHARLA SAI KUSHAL",
+        designation: "MANAGING DIRECTOR",
         organisation: "NSR NEWS",
         area: "Warangal, Telangana",
-        phone: "9908759929",
-        valid: "31-12-2026",
-        status: "ACTIVE"
-    },
-
-    "NSR 0220009": {
-        name: "AVULA PURNA PRASAD",
-        designation: "CAMERAMAN",
-        organisation: "NSR NEWS",
-        area: "Warangal, Telangana",
-        phone: "9908759929",
-        valid: "31-12-2026",
-        status: "ACTIVE"
-    },
-
-    "NSR 02200010": {
-        name: "NASAM PRAVEEN",
-        designation: "MARKETING MANAGER",
-        organisation: "NSR NEWS",
-        area: "Warangal, Telangana",
-        phone: "9908759929",
-        valid: "31-12-2026",
-        status: "ACTIVE"
-    },
-
-    "NSR 02200012": {
-        name: "MATHARASI SIRDHAR",
-        designation: "ADS INCHARGE",
-        organisation: "NSR NEWS",
-        area: "Warangal, Telangana",
-        phone: "9908759929",
+        phone: "YOUR_CORRECT_PHONE",
         valid: "31-12-2026",
         status: "ACTIVE"
     }
+};
+
+const params = new URLSearchParams(window.location.search);
+const id = (params.get("id") || "").trim().toUpperCase();
+const result = document.getElementById("result");
+
+if (!id) {
+    result.innerHTML = "Please scan a valid NSR Journalist ID QR Code.";
+} else if (!journalists[id]) {
+    result.innerHTML = "❌ ID NOT VERIFIED";
+} else {
+    const p = journalists[id];
+
+    if (p.status !== "ACTIVE") {
+        result.innerHTML = "❌ ID NOT ACTIVE";
+    } else {
+        result.innerHTML = `
+            <h2>✅ VERIFIED JOURNALIST</h2>
+            <p><b>Employee ID:</b> ${id}</p>
+            <p><b>Name:</b> ${p.name}</p>
+            <p><b>Designation:</b> ${p.designation}</p>
+            <p><b>Organisation:</b> ${p.organisation}</p>
+            <p><b>Area:</b> ${p.area}</p>
+            <p><b>Valid Until:</b> ${p.valid}</p>
+            <
 
 };
 const params = new URLSearchParams(window.location.search);
