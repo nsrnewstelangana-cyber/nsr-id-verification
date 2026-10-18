@@ -1,9 +1,9 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>NSR News & Research - ID Verification</title>
 
 <style>
@@ -13,6 +13,7 @@
 
 body {
     margin: 0;
+    padding: 20px;
     font-family: Arial, sans-serif;
     background: #eef2f7;
     color: #17213b;
@@ -20,159 +21,204 @@ body {
 
 .header {
     background: #071d45;
-    padding: 18px;
+    color: white;
     text-align: center;
+    padding: 22px 12px;
+    border-radius: 12px 12px 0 0;
 }
 
 .header img {
-    width: 220px;
-    max-width: 80%;
+    display: block;
+    width: 210px;
+    max-width: 90%;
+    margin: 0 auto 12px;
     background: white;
-    padding: 8px;
-    border-radius: 10px;
+    border-radius: 8px;
+}
+
+.header h1 {
+    margin: 8px 0;
+    font-size: 25px;
+}
+
+.header p {
+    margin: 5px 0;
+    color: #e5e7eb;
 }
 
 .container {
     max-width: 700px;
-    margin: 30px auto;
-    padding: 20px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px #00000015;
 }
 
 .card {
-    background: white;
-    border-radius: 18px;
-    padding: 30px;
-    box-shadow: 0 8px 30px rgba(0,0,0,0.12);
-    text-align: center;
+    padding: 24px;
 }
 
 .title {
-    font-size: 30px;
-    font-weight: bold;
-    color: #071d45;
-    margin-bottom: 8px;
+    text-align: center;
+    color: #b91c1c;
+    margin-top: 0;
 }
 
-.subtitle {
-    color: #555;
-    margin-bottom: 25px;
+.notice {
+    text-align: center;
+    color: #475569;
+    line-height: 1.6;
+}
+
+#result {
+    margin-top: 20px;
+}
+
+.status {
+    text-align: center;
+    padding: 16px;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 21px;
+    margin-bottom: 18px;
 }
 
 .verified {
-    background: #e8f8ee;
-    border: 2px solid #1b9e4b;
-    color: #08752f;
-    padding: 15px;
-    border-radius: 12px;
-    font-size: 25px;
-    font-weight: bold;
-    margin-bottom: 25px;
-}
-
-.photo {
-    width: 170px;
-    height: 170px;
-    object-fit: cover;
-    border-radius: 15px;
-    border: 5px solid #071d45;
-    margin-bottom: 15px;
-}
-
-.name {
-    font-size: 27px;
-    font-weight: bold;
-    color: #071d45;
-}
-
-.designation {
-    display: inline-block;
-    background: #c90000;
-    color: white;
-    padding: 8px 20px;
-    border-radius: 5px;
-    font-weight: bold;
-    margin: 10px 0 20px;
-}
-
-.details {
-    text-align: left;
-    max-width: 500px;
-    margin: auto;
-}
-
-.details p {
-    border-bottom: 1px solid #ddd;
-    padding: 10px 0;
-    margin: 0;
-}
-
-.label {
-    font-weight: bold;
-    color: #555;
+    background: #dcfce7;
+    color: #166534;
+    border: 1px solid #86efac;
 }
 
 .error {
-    background: #fff0f0;
-    border: 2px solid #d00000;
-    color: #b00000;
-    padding: 20px;
-    border-radius: 12px;
-    font-size: 20px;
+    background: #fee2e2;
+    color: #991b1b;
+    border: 1px solid #fca5a5;
+}
+
+.details {
+    border: 1px solid #dbe3ee;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.detail-row {
+    display: grid;
+    grid-template-columns: 42% 58%;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.detail-row:last-child {
+    border-bottom: none;
+}
+
+.detail-label,
+.detail-value {
+    padding: 13px 12px;
+    overflow-wrap: anywhere;
+}
+
+.detail-label {
+    background: #f1f5f9;
     font-weight: bold;
 }
 
 .footer {
+    background: #071d45;
+    color: white;
     text-align: center;
-    color: #666;
-    margin-top: 25px;
-    font-size: 14px;
+    padding: 20px 12px;
+    font-size: 13px;
+    line-height: 1.8;
 }
 
-.contact {
-    margin-top: 20px;
-    padding-top: 15px;
-    border-top: 1px solid #ddd;
+.footer a {
+    color: #bfdbfe;
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 10px;
+    }
+
+    .card {
+        padding: 15px;
+    }
+
+    .header h1 {
+        font-size: 21px;
+    }
+
+    .detail-row {
+        grid-template-columns: 40% 60%;
+    }
+
+    .detail-label,
+    .detail-value {
+        padding: 11px 8px;
+        font-size: 13px;
+    }
 }
 </style>
 </head>
 
 <body>
 
-<div class="header">
-    <img src="nsr-logo.png" alt="NSR News & Research">
-</div>
-
 <div class="container">
 
-<div class="card">
+    <header class="header">
+        <img src="nsr-logo.png" alt="NSR News and Research Logo"
+             onerror="this.style.display='none'">
 
-<div class="title">
-    NSR NEWS & RESEARCH
-</div>
+        <h1>NSR NEWS &amp; RESEARCH</h1>
+        <p>MEDIA IDENTIFICATION VERIFICATION</p>
+    </header>
 
-<div class="subtitle">
-    MEDIA IDENTIFICATION VERIFICATION
-</div>
+    <main class="card">
+        <h2 class="title">JOURNALIST ID VERIFICATION</h2>
 
-<div id="result"></div>
+        <p class="notice">
+            This page verifies NSR News &amp; Research employee
+            identification cards using their registered Employee ID.
+        </p>
 
-<div class="contact">
-    <b>NSR NEWS & RESEARCH</b><br><br>
-    📞 9059491638 &nbsp; | &nbsp; 9908759929<br>
-    ✉️ nsrnewstelangana@gmail.com
-</div>
+        <div id="result" aria-live="polite"></div>
+    </main>
 
-</div>
-
-<div class="footer">
-    © NSR News & Research
-</div>
+    <footer class="footer">
+        <strong>NSR NEWS &amp; RESEARCH</strong><br>
+        Warangal, Telangana<br>
+        Email:
+        <a href="mailto:nsrnewstelangana@gmail.com">
+            nsrnewstelangana@gmail.com
+        </a><br>
+        Instagram:
+        <a href="https://www.instagram.com/nsrnewstv/">
+            @nsrnewstv
+        </a><br>
+        YouTube:
+        <a href="https://www.youtube.com/@nsrnewstelangana">
+            NSR News Telangana
+        </a><br>
+        Official Journalist ID Verification Portal
+    </footer>
 
 </div>
 
 <script>
+"use strict";
+
+/*
+  NSR EMPLOYEE DATABASE
+
+  Add each employee using the exact Employee ID
+  printed on their ID card.
+
+  Keep the ID format consistent, including spaces.
+*/
 
 const journalists = {
+
     "NSR 0220001": {
         name: "RACHARLA GOPI",
         designation: "CHIEF EDITOR",
@@ -188,127 +234,137 @@ const journalists = {
         designation: "MANAGING DIRECTOR",
         organisation: "NSR NEWS",
         area: "Warangal, Telangana",
-        phone: "YOUR_CORRECT_PHONE",
+        phone: "NOT PROVIDED",
+        valid: "31-12-2026",
+        status: "ACTIVE"
+    },
+
+    "NSR 0220003": {
+        name: "GILIGITHA. RAJINI",
+        designation: "SUB-EDITOR",
+        organisation: "NSR NEWS",
+        area: "Warangal, Telangana",
+        phone: "9908759929",
+        valid: "31-12-2026",
+        status: "ACTIVE"
+    },
+
+    "NSR 0220009": {
+        name: "AVULA PURNA PRASAD",
+        designation: "CAMERAMAN",
+        organisation: "NSR NEWS",
+        area: "Warangal, Telangana",
+        phone: "9908759929",
+        valid: "31-12-2026",
+        status: "ACTIVE"
+    },
+
+    "NSR 0220010": {
+        name: "NASAM PRAVEEN",
+        designation: "MARKETING MANAGER",
+        organisation: "NSR NEWS",
+        area: "Warangal, Telangana",
+        phone: "9908759929",
+        valid: "31-12-2026",
+        status: "ACTIVE"
+    },
+
+    "NSR 0220012": {
+        name: "MATHARASI SIRDHAR",
+        designation: "ADS INCHARGE",
+        organisation: "NSR NEWS",
+        area: "Warangal, Telangana",
+        phone: "9908759929",
         valid: "31-12-2026",
         status: "ACTIVE"
     }
-};
-
-const params = new URLSearchParams(window.location.search);
-const id = (params.get("id") || "").trim().toUpperCase();
-const result = document.getElementById("result");
-
-if (!id) {
-    result.innerHTML = "Please scan a valid NSR Journalist ID QR Code.";
-} else if (!journalists[id]) {
-    result.innerHTML = "❌ ID NOT VERIFIED";
-} else {
-    const p = journalists[id];
-
-    if (p.status !== "ACTIVE") {
-        result.innerHTML = "❌ ID NOT ACTIVE";
-    } else {
-        result.innerHTML = `
-            <h2>✅ VERIFIED JOURNALIST</h2>
-            <p><b>Employee ID:</b> ${id}</p>
-            <p><b>Name:</b> ${p.name}</p>
-            <p><b>Designation:</b> ${p.designation}</p>
-            <p><b>Organisation:</b> ${p.organisation}</p>
-            <p><b>Area:</b> ${p.area}</p>
-            <p><b>Valid Until:</b> ${p.valid}</p>
-            <
 
 };
+
+
+/*
+  READ EMPLOYEE ID FROM QR URL
+
+  Example:
+  ?id=NSR%200220002
+
+  URLSearchParams automatically decodes %20 into a space.
+*/
+
 const params = new URLSearchParams(window.location.search);
-const id = (params.get("id") || "").trim().toUpperCase();
+
+const id = (params.get("id") || "")
+    .trim()
+    .replace(/\s+/g, " ")
+    .toUpperCase();
 
 const result = document.getElementById("result");
 
-if (!id) {
 
-    result.innerHTML = `
-        <div class="error">
-            ⚠️ ID NOT PROVIDED
-            <br><br>
-            Please scan a valid NSR Journalist ID QR Code.
-        </div>
-    `;
-
-}
-else if (!journalists[id]) {
-
-    result.innerHTML = `
-        <div class="error">
-            ❌ ID NOT VERIFIED
-            <br><br>
-            Employee ID: <b>${id}</b>
-            <br><br>
-            This ID was not found in the NSR verification system.
-        </div>
-    `;
-
-}
-else {
-
-    const p = journalists[id];
-
-    result.innerHTML = `
-
-        <div class="verified">
-            ✅ VERIFIED JOURNALIST
-        </div>
-
-        <div class="name">
-            ${p.name}
-        </div>
-
-        <div class="designation">
-            ${p.designation}
-        </div>
-
-        <div class="details">
-
-            <p>
-                <span class="label">Employee ID:</span>
-                ${id}
-            </p>
-
-            <p>
-                <span class="label">Organisation:</span>
-                ${p.organisation}
-            </p>
-
-            <p>
-                <span class="label">Designation:</span>
-                ${p.designation}
-            </p>
-
-            <p>
-                <span class="label">Area:</span>
-                ${p.area}
-            </p>
-
-            <p>
-                <span class="label">Contact:</span>
-                ${p.phone}
-            </p>
-
-            <p>
-                <span class="label">Valid Until:</span>
-                ${p.valid}
-            </p>
-
-            <p>
-                <span class="label">Status:</span>
-                <b style="color:#07852f;">
-                    ${p.status}
-                </b>
-            </p>
-
-        </div>
-    `;
+function showError(message) {
+    const box = document.createElement("div");
+    box.className = "status error";
+    box.textContent = message;
+    result.replaceChildren(box);
 }
 
+
+function addDetail(parent, label, value) {
+    const row = document.createElement("div");
+    row.className = "detail-row";
+
+    const labelCell = document.createElement("div");
+    labelCell.className = "detail-label";
+    labelCell.textContent = label;
+
+    const valueCell = document.createElement("div");
+    valueCell.className = "detail-value";
+    valueCell.textContent = value || "Not provided";
+
+    row.append(labelCell, valueCell);
+    parent.appendChild(row);
+}
+
+
+function verifyEmployee() {
+
+    if (!id) {
+        showError("PLEASE SCAN A VALID NSR ID QR CODE");
+        return;
+    }
+
+    const employee = journalists[id];
+
+    if (!employee) {
+        showError("❌ ID NOT VERIFIED");
+        return;
+    }
+
+    if (employee.status !== "ACTIVE") {
+        showError("❌ ID NOT ACTIVE");
+        return;
+    }
+
+    const status = document.createElement("div");
+    status.className = "status verified";
+    status.textContent = "✓ VERIFIED JOURNALIST";
+
+    const details = document.createElement("div");
+    details.className = "details";
+
+    addDetail(details, "Employee ID", id);
+    addDetail(details, "Name", employee.name);
+    addDetail(details, "Designation", employee.designation);
+    addDetail(details, "Organisation", employee.organisation);
+    addDetail(details, "Location", employee.area);
+    addDetail(details, "Phone", employee.phone);
+    addDetail(details, "Valid Until", employee.valid);
+    addDetail(details, "Status", employee.status);
+
+    result.replaceChildren(status, details);
+}
+
+verifyEmployee();
 </script>
 
 </body>
